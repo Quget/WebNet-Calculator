@@ -42,7 +42,7 @@ namespace WebNet_Calculator.Controllers
                 }
                 catch
                 {
-                    return $"Invalid input to calculate from.";
+                    return $"Invalid input.";
                 }
             }
         }

@@ -1,10 +1,47 @@
+/*some css in style of my website https:www.quget.com*/
 
 .calcButton 
 {
     min-width: 64px;
     min-height: 64px;
+    background-color: #f190fa;
+    border-color: #f190fa;
+    color: #202020;
 }
 
+.calcButton:hover
+{
+    background-color: #e3bc29;
+    border-color: #e3bc29;
+    color: #202020;
+}
+.calcButton:focus
+{
+    background-color: #e3bc29;
+    border-color: #e3bc29;
+    color: #202020;
+}
+.container 
+{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+h2 
+{
+    color: #e3bc29;
+}
+h3 
+{
+    color: #e3bc29;
+}
+
+.footer a 
+{
+    color: #e3bc29;
+}
 /*Default generated*/
 html {
     font-size: 14px;
@@ -26,5 +63,7 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    background-color: #202020;
+    color:#DFF6F0;
+    margin-bottom: 60px;
 }
