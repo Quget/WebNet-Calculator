@@ -1,0 +1,87 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Calculator";//This is used in _Layout
+}
+<!-- Calculator web page!-->
+
+<h2>Calculator</h2>
+<p>Calculate some things.</p>
+
+<div class="calculator">
+    <!--Result row-->
+    <div class ="row">
+        <h1 id="inputResult">@ViewData["CalcResult"]</h1>
+    </div>
+    <!--calculator buttons!-->
+    <div class="row mb-1">
+        <div class="col">
+            <button type="button" class="calcButton btn btn-info" value="7" onclick="calcInput(event)">7</button>
+            <button type="button" class="calcButton btn btn-info" value="8" onclick="calcInput(event)">8</button>
+            <button type="button" class="calcButton btn btn-info" value="9" onclick="calcInput(event)">9</button>
+            <button type="button" class="calcButton btn btn-info" value="*" onclick="calcInput(event)">x</button>
+        </div>
+    </div>
+    <div class="row mb-1">
+        <div class="col">
+            <button type="button" class="calcButton btn btn-info" value="4" onclick="calcInput(event)">4</button>
+            <button type="button" class="calcButton btn btn-info" value="5" onclick="calcInput(event)">5</button>
+            <button type="button" class="calcButton btn btn-info" value="6" onclick="calcInput(event)">6</button>
+            <button type="button" class="calcButton btn btn-info" value="-" onclick="calcInput(event)">-</button>
+        </div>
+    </div>
+    <div class="row mb-1">
+        <div class="col">
+            <button type="button" class="calcButton btn btn-info" value="1" onclick="calcInput(event)">1</button>
+            <button type="button" class="calcButton btn btn-info" value="2" onclick="calcInput(event)">2</button>
+            <button type="button" class="calcButton btn btn-info" value="3" onclick="calcInput(event)">3</button>
+            <button type="button" class="calcButton btn btn-info" value="+" onclick="calcInput(event)">+</button>
+        </div>
+    </div>
+
+    <div class="row mb-1">
+        <div class="col">
+            <button type="submit" class="calcButton btn btn-info" value="=" onclick="submitInput(event)">=</button>
+            <button type="button" class="calcButton btn btn-info" value="0" onclick="calcInput(event)">0</button>
+            <button type="button" class="calcButton btn btn-info" value="." onclick="calcInput(event)">.</button>
+            <button type="button" class="calcButton btn btn-info" value="/" onclick="calcInput(event)">/</button>
+        </div>
+    </div>
+    <div class="row mb-1">
+        <div class="col">
+            <button type="button" class="calcButton btn btn-info" value="clr" onclick="clearInput(event)">clr</button>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    
+    var inString = "";//calculator input string
+
+    //input from a calculator button(except for clr and = )
+    function calcInput(event) 
+    {
+        inString += event.target.value;
+        updateInput();
+    }
+
+    //= button has been pressed. Go to //Calculator?calcString= and calculator inputstring to calculate!
+    function submitInput(event)
+    {
+        window.location.replace('?calcString=' + encodeURIComponent(inString));
+    }
+
+    //clear input
+    function clearInput(event) 
+    { 
+        inString = "";
+        updateInput();
+    }
+
+    //update user input.
+    function updateInput() 
+    { 
+        document.getElementById('inputResult').innerHTML = inString;
+    }
+</script>
