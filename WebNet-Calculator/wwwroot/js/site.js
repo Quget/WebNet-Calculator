@@ -2,7 +2,8 @@
 var inString = "";//calculator input string
 
 //input from a calculator button(except for clr and = )
-function calcInput(event) {
+function calcInput(event) 
+{
     inString += event.target.value;
     updateInput();
 }
